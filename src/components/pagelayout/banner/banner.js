@@ -1,9 +1,10 @@
 import React from 'react';
+import './banner.css';
 
 const Banner = () => {
     return (
-        <div>
-            
+        <div className='banner'>
+            <h1>FlashQwiz</h1>
         </div>
     )
 }
