@@ -6,17 +6,17 @@ import Footer from './components/pagelayout/footer/footer';
 import './App.css';
 
 const App = () => {
-    return (
-        <div id="wrapper">
-                <Header />
-            <Container>
-                <div id="contents">
+   return (
+      <div id="wrapper">
+         <Header />
+         <Container>
+            <div id="contents">
 
-                </div>
-            </Container>
-                <Footer />
-        </div>
-    )
+            </div>
+         </Container>
+         <Footer />
+      </div>
+   )
 }
 
 

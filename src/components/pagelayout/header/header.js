@@ -3,11 +3,11 @@ import Banner from '../banner/banner';
 import './header.css';
 
 const Header = () => {
-    return (
-        <div className='header'>
-            <Banner />
-        </div>
-    )
+   return (
+      <div className='header'>
+         <Banner />
+      </div>
+   )
 }
 
 export default Header;
