@@ -10,8 +10,8 @@ export const getCardDeckById = (deckId) => {
    return axios.get(`http://localhost:5000/api/carddecks/${deckId}`).then((res) => (res.data)).catch((err)=> console.log(err)) ;
 }
 
-// create new card deck
-export const CreateCardDeck = (data) => {
+// add new card deck
+export const addCardDeck = (data) => {
    return axios.post(`http://localhost:5000/api/carddecks`, data).then((res) => (res.data)).catch((err)=> console.log(err)) ;
 }
 
@@ -27,3 +27,13 @@ export const getFlashCardById = (deckId, cardId) => {
    return axios.get(`http://localhost:5000/api/carddecks/${deckId}/cards/${cardId}`).then((res) => (res.data)).catch((err)=> console.log(err)) ;
 }
 
+
+// Add flashcard to deck
+export const addFlashCard2Deck = (deckId, data) => {
+   return axios.post(`http://localhost:5000/api/carddecks/${deckId}/cards`, data).then((res) => (res.data)).catch((err)=> console.log(err)) ;
+}
+
+// Update flashcard
+export const updateFlashCard = (deckId, cardId, data) => {
+   return axios.put(`http://localhost:5000/api/carddecks/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err)=> console.log(err)) ;
+}
