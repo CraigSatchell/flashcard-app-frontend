@@ -1,10 +1,15 @@
 .view-decks {
-    padding: 5px;
+   margin-bottom: 50px;
+    padding: 5px 25px;
     color: var(--pri-text-color);
 }
 
 .view-decks h2 {
     margin-bottom: 10px;
+    padding: 5px;
+    color: var(--pri-color);
+    background-color: var(--sec-color);
+
 }
 .view-decks ul li {
     font-size: 1.3em;

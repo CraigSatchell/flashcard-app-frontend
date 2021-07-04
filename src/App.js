@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 //import { Link, Switch, Route } from 'react-router-dom';
-import { Container } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import Header from './components/pagelayout/header/header';
 import Footer from './components/pagelayout/footer/footer';
 import ViewDecks from './components/decks/viewDecks/viewDecks';
@@ -28,7 +28,7 @@ const App = () => {
     *  API routes
    ******************************/
    const apiPath = 'http://localhost:5000/api/carddecks';
-   
+
    const getAllCardDecks = () => {
       axios.get(apiPath).then((res) => { setDecks(res.data) }).catch((err) => console.log(err));
    }
@@ -78,7 +78,14 @@ const App = () => {
          <Header />
          <Container>
             <div id="contents">
-               {decks == null ? "Loading..." : <ViewDecks decks={decks} />}
+               <Grid container spacing={2} justify='space-between'>
+                  <Grid xs={4}>
+                     {decks == null ? "Loading..." : <ViewDecks decks={decks} />}
+                  </Grid>
+                  <Grid md={7}>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur suscipit dolor officiis ad odio, consectetur temporibus nesciunt eos molestias cupiditate quod eius optio veritatis neque quidem quasi ratione molestiae magni assumenda! Suscipit libero neque, illo ratione est ut fugit, fugiat assumenda rerum nisi obcaecati. Alias sit enim ut ex!</p>
+                  </Grid>
+               </Grid>
             </div>
          </Container>
          <Footer />
