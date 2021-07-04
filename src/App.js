@@ -76,11 +76,11 @@ const App = () => {
    return (
       <div id="wrapper">
          <Header />
-         <Container>
+         <Container maxWidth='lg'>
             <div id="contents">
-               <Grid container spacing={2} justify='space-between'>
-                  <Grid xs={4}>
-                     {decks == null ? "Loading..." : <ViewDecks decks={decks} />}
+               <Grid container spacing={2} justify='space-around'>
+                  <Grid md={5}>
+                     {decks == null ? <p>Loading...</p> : <ViewDecks decks={decks} />}
                   </Grid>
                   <Grid md={7}>
                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur suscipit dolor officiis ad odio, consectetur temporibus nesciunt eos molestias cupiditate quod eius optio veritatis neque quidem quasi ratione molestiae magni assumenda! Suscipit libero neque, illo ratione est ut fugit, fugiat assumenda rerum nisi obcaecati. Alias sit enim ut ex!</p>

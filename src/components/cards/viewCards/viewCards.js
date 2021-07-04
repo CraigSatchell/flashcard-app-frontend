@@ -1,10 +1,10 @@
 import React from 'react';
 import './viewCards.css';
 
-const ViewCards = () => {
+const ViewCards = (props) => {
    return (
       <div className='view-card'>
-         <h3>View Card</h3>
+         <h2>FlashCard</h2>
       </div>
    )
 }

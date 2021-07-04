@@ -19,11 +19,12 @@ body {
 }
 
 p {
-   padding-left: 25px;
+   padding: 0 25px 50px 25px;
    color: var(--sec-text-color);
    font-size: 1.4em;
    line-height: 1.5em;
 }
 #contents {
    margin-top: 100px;
+   min-height: 500px;
 }
