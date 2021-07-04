@@ -14,6 +14,8 @@ const ViewMain = (props) => {
                   handleEditDeckClick={props.handleEditDeckClick}
                   handleSaveDeckClick={props.handleSaveDeckClick}
                   handleDeckChange={props.handleDeckChange}
+                  selectedDeck={props.selectedDeck}
+                  setSelectedDeck={props.setSelectedDeck}
                />
             </Grid>
             <Grid md={7}>

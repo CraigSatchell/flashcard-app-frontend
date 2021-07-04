@@ -19,6 +19,7 @@ const App = () => {
    const [cardCount, setCardCount] = useState(0);
    const [currCardCount, setCurrCardCount] = useState(0);
    const [selectedCard, setSelectedCard] = useState(null);
+   const [selectedDeck, setSelectedDeck] = useState(null);
 
    // Use effect
    useEffect(() => {
@@ -153,6 +154,8 @@ const App = () => {
                      setCurrCardCount={setCurrCardCount}
                      selectedCard={selectedCard}
                      setSelectedCard={setSelectedCard}
+                     selectedDeck={selectedDeck}
+                     setSelectedDeck={setSelectedDeck}
                   />}
                </Grid>
             </div>
