@@ -1,7 +1,12 @@
 .banner {
     width: 100%;
     color: var(--pri-text-color);
-    padding: 7px 15px;
     box-shadow: 2px 2px 7px var(--box-shadow-color);
     border-bottom: 2px solid #cccccc;
 }
+
+.banner h1 {
+   margin-left: 5px;
+   padding: 10px 0;
+}
+

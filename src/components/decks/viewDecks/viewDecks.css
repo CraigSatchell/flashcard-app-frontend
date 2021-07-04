@@ -7,8 +7,10 @@
 .view-decks h2 {
     margin-bottom: 10px;
     padding: 5px;
+    border: 2px solid var(--pri-color);
     color: var(--pri-color);
     background-color: var(--sec-color);
+    border-radius: 5px;
 
 }
 .view-decks ul li {

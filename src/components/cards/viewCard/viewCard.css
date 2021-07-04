@@ -1,0 +1,57 @@
+.view-card {
+    margin-bottom: 50px;
+    padding: 5px 25px;
+    color: var(--pri-text-color);
+}
+
+.view-card h2 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid var(--pri-color);
+    color: var(--pri-text-color);
+    background-color: var(--pri-color);
+    border-radius: 5px;
+}
+
+.view-card .card-actions {
+    margin-top: 5px;
+    font-size: 1.5em;
+    text-align: center;
+}
+.view-card .card-actions ul li,
+.card-actions li a {
+    display: inline;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+}
+
+.view-card .card-actions ul li:hover,
+.card-actions li a:hover {
+    color: var(--sec-color);
+}
+
+.view-card .edit-action {
+    display: flex;
+}
+
+.edit-action .button, .edit-action a
+{
+    width: 75px;
+    margin: 0;
+    padding: 2px;
+    color:inherit;
+    font-size: 1.2em;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.edit-action .button:hover, .edit-action a:hover {
+color: var(--pri-color);
+font-weight: bold;
+text-decoration: none;
+}
+

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Grid } from '@material-ui/core';
 import Header from './components/pagelayout/header/header';
 import Footer from './components/pagelayout/footer/footer';
-import ViewDecks from './components/decks/viewDecks/viewDecks';
+import ViewMain from './components/viewMain/viewMain';
 import './App.css';
 import axios from 'axios';
 
@@ -73,18 +73,14 @@ const App = () => {
    ******************************/
 
    console.log(decks);
+
    return (
       <div id="wrapper">
          <Header />
          <Container maxWidth='lg'>
             <div id="contents">
-               <Grid container spacing={2} justify='space-around'>
-                  <Grid md={5}>
-                     {decks == null ? <p>Loading...</p> : <ViewDecks decks={decks} />}
-                  </Grid>
-                  <Grid md={7}>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequatur suscipit dolor officiis ad odio, consectetur temporibus nesciunt eos molestias cupiditate quod eius optio veritatis neque quidem quasi ratione molestiae magni assumenda! Suscipit libero neque, illo ratione est ut fugit, fugiat assumenda rerum nisi obcaecati. Alias sit enim ut ex!</p>
-                  </Grid>
+               <Grid container spacing={2} justify='space-around' alignItems='center'>
+                  {decks == null ? <p>Loading...</p> : <ViewMain decks={decks} />}
                </Grid>
             </div>
          </Container>

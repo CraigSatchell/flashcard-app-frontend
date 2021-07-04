@@ -1,10 +1,13 @@
 import React from 'react';
 import './banner.css';
-
+import logo from './logo.png';
 const Banner = () => {
    return (
       <div className='banner'>
-         <h1>FlashQwiz</h1>
+         <div>
+            <h1><img src={logo} alt='flashcard-logo' />&nbsp;FlashQwiz</h1>
+         </div>
+   
       </div>
    )
 }
