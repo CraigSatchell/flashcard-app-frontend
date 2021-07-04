@@ -14,6 +14,10 @@
     border-radius: 5px;
 }
 
+.view-card h4 {
+   font-size: 1.8em;
+}
+
 .view-card .card-actions {
     margin-top: 5px;
     font-size: 1.5em;
@@ -34,14 +38,15 @@
 
 .view-card .edit-action {
     display: flex;
+    justify-content: flex-end;
 }
 
-.edit-action .button, .edit-action a
-{
+.edit-action .button,
+.edit-action a {
     width: 75px;
     margin: 0;
     padding: 2px;
-    color:inherit;
+    color: inherit;
     font-size: 1.2em;
     text-align: center;
     border: 1px solid #cccccc;
@@ -49,9 +54,9 @@
     text-decoration: none;
 }
 
-.edit-action .button:hover, .edit-action a:hover {
-color: var(--pri-color);
-font-weight: bold;
-text-decoration: none;
+.edit-action .button:hover,
+.edit-action a:hover {
+    color: var(--pri-color);
+    font-weight: bold;
+    text-decoration: none;
 }
-

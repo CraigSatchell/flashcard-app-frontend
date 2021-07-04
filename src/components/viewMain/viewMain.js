@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core';
 
 const ViewMain = (props) => {
    return (
-      <div>
+      <div className='view-main'>
          <Grid container spacing={2} justify='space-around'>
             <Grid xs={5}>
                <ViewDecks decks={props.decks} />

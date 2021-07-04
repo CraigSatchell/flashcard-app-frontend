@@ -1,14 +1,14 @@
 import React from 'react';
 import './viewCard.css';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
    card: {
       padding: theme.spacing(0),
       margin: 0,
-      color: '#cccccc',
+      color: 'var(--pri-text-color)',
       backgroundColor: '#999999',
    },
    cardContent: {
