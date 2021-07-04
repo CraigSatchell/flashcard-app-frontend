@@ -6,7 +6,7 @@ import Footer from './components/pagelayout/footer/footer';
 import ViewDecks from './components/decks/viewDecks/viewDecks';
 import './App.css';
 import axios from 'axios';
-import Test from './test/test';
+
 
 
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
       axios.get(apiPath).then((res) => { setDecks(res.data) }).catch((err) => console.log(err));
    }
 
+   /*
    // get card decks by id
    const getCardDeckById = (deckId) => {
       return axios.get(`${apiPath}/${deckId}`).then((res) => (res.data)).catch((err) => console.log(err));
@@ -65,7 +66,7 @@ const App = () => {
    const updateFlashCard = (deckId, cardId, data) => {
       return axios.put(`${apiPath}/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err) => console.log(err));
    }
-
+*/
 
    /******************************
     *  State modifiers

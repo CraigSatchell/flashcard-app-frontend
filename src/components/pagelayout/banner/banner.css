@@ -1,7 +1,7 @@
 .banner {
     width: 100%;
-    color: #ffffff;
+    color: var(--pri-text-color);
     padding: 7px 15px;
-    box-shadow: 2px 2px 7px #333333;
+    box-shadow: 2px 2px 7px var(--box-shadow-color);
     border-bottom: 2px solid #cccccc;
 }

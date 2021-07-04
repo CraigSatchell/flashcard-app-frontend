@@ -5,6 +5,19 @@
     box-sizing: border-box;
 }
 
+:root {
+   --main-bg-color: #666666;
+   --pri-color: #652c90;
+   --sec-color: #9976b4;
+   --pri-text-color: #ffffff;
+   --sec-text-color: #cccccc;
+   --box-shadow-color: #333333;
+}
+
 body {
-    background-color: #666666;
+    background-color: var(--main-bg-color);
+}
+
+#contents {
+   margin-top: 125px;
 }
