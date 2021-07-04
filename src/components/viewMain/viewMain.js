@@ -13,6 +13,7 @@ const ViewMain = (props) => {
                   handleAddDeckClick={props.handleAddDeckClick}
                   handleEditDeckClick={props.handleEditDeckClick}
                   handleSaveDeckClick={props.handleSaveDeckClick}
+                  handleDeckChange={props.handleDeckChange}
                />
             </Grid>
             <Grid md={7}>
@@ -23,7 +24,8 @@ const ViewMain = (props) => {
                   handlePrevCardClick={props.handlePrevCardClick}
                   handleNextCardClick={props.handleNextCardClick}
                   handleFlipCardClick={props.handleFlipCardClick}
-                  handleSaveCardClick={props.props.handleSaveCardClick}
+                  handleSaveCardClick={props.handleSaveCardClick}
+                  handleCardChange={props.handleCardChange}
                   cardCount={props.cardCount}
                   setCardCount={props.setCardCount}
                   currCardCardCount={props.currCardCount}

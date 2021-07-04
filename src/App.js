@@ -71,7 +71,7 @@ const App = () => {
    }
 */
    /******************************
-    *  Form handlers
+    *  Event handlers
    ******************************/
    const handleEditCardClick = () => {
 
@@ -114,7 +114,13 @@ const App = () => {
 
    }
 
+   const handleCardChange = () => {
 
+   }
+
+   const handleDeckChange = () => {
+
+   }
 
    /******************************
     *  State modifiers
@@ -139,6 +145,8 @@ const App = () => {
                      handleAddDeckClick={handleAddDeckClick}
                      handleEditDeckClick={handleEditDeckClick}
                      handleSaveDeckClick={handleSaveDeckClick}
+                     handleDeckChange={handleDeckChange}
+                     handleCardChange={handleCardChange}
                      cardCount={cardCount}
                      setCardCount={setCardCount}
                      currCardCardCount={currCardCount}
