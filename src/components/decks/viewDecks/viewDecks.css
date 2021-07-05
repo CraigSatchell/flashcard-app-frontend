@@ -18,7 +18,7 @@
 .view-decks ul li {
    display: block;
     font-size: 1.5em;
-    line-height: 1.5em;
+    line-height: 1.7em;
     list-style: none;
 }
 
@@ -27,4 +27,13 @@
    border-right: 2px dashed #999999;
    color: var(--sec-color);
    font-weight: 900;
+}
+
+.view-decks button {
+   font-size: 0.9em;
+   border: 1px solid var(--sec-color);
+   color: var(--sec-color);
+   border-radius: 5px;
+   padding: 1px 10px;
+   background-color: inherit;
 }

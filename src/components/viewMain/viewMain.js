@@ -14,6 +14,7 @@ const ViewMain = (props) => {
                   handleEditDeckClick={props.handleEditDeckClick}
                   handleSaveDeckClick={props.handleSaveDeckClick}
                   handleDeckChange={props.handleDeckChange}
+                  handleSwitchDecks={props.handleSwitchDecks}
                   selectedDeck={props.selectedDeck}
                   setSelectedDeck={props.setSelectedDeck}
                />
