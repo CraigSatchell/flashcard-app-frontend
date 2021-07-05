@@ -126,6 +126,7 @@ const App = () => {
 
    const handleSwitchDecks = (index) => {
       setSelectedDeck(index);
+      setCardCount(decks[index].cards.length);
       setSelectedCard(0);
    }
 
