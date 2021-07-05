@@ -30,13 +30,24 @@ const App = () => {
 
 
    const getAllCardDecks = () => {
-      axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
+      axios.get(apiPath).then((res) => { setDecks(res.data); }).catch((err) => console.log(err));
    }
+
+   // const getAllCardDecks = () => {
+   //    axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
+   // }
 
    // Use effect
    useEffect(() => {
       getAllCardDecks();
    }, []);
+
+   useEffect(() => {
+      if (decks) {
+         setSelectedDeck(selectedDeck);
+         setCardCount(decks[selectedDeck].cards.length);
+         }
+   },[selectedDeck, decks])
 
    /*
    // get card decks by id
@@ -88,11 +99,16 @@ const App = () => {
    }
 
    const handlePrevCardClick = () => {
-      alert('card prev');
+      if (selectedCard > 0) {
+         setSelectedCard(selectedCard - 1);
+      }
    }
 
    const handleNextCardClick = () => {
-      alert('card next');
+      if (selectedCard < cardCount-1) {
+         setSelectedCard(selectedCard + 1);
+      }
+
    }
 
    const handleFlipCardClick = () => {

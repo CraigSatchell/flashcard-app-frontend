@@ -38,7 +38,7 @@ const ViewCard = (props) => {
                </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-               <div className='card-count'>{props.currCardCount + 1} of {props.cardCount}</div>
+               <div className='card-count'>{props.selectedCard + 1} of {props.cardCount}</div>
                <div className='edit-action'><div className='button' onClick={props.handleAddCardClick}>Add</div>&nbsp;&nbsp;<div className='button' onClick={props.handleEditCardClick}>Edit</div></div>
             </CardActions>
          </Card>
