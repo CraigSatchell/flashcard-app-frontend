@@ -31,15 +31,15 @@ const ViewCard = (props) => {
          <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
                <Typography gutterBottom variant="h5" component="h2">
-                  FlashCard - {props.decks[props.selectedDeck].title}
+                  <div>FlashCard - {props.decks[props.selectedDeck].title}</div>
                </Typography>
                <Typography variant="h4" >
-                  {props.decks[props.selectedDeck].cards[props.selectedCard].cardFront}
+                  {props.decks[props.selectedDeck].cards.length !== 0 ? <div>{props.decks[props.selectedDeck].cards[props.selectedCard].cardFront}</div> : <div></div>}
                </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-               <div className='card-count'>{props.selectedCard + 1} of {props.cardCount}</div>
-               <div className='edit-action'><div className='button' onClick={props.handleAddCardClick}>Add</div>&nbsp;&nbsp;<div className='button' onClick={props.handleEditCardClick}>Edit</div></div>
+               {props.decks[props.selectedDeck].cards.length !== 0 ? <div className='card-count'>{props.selectedCard + 1} of {props.cardCount}</div> : ''}
+               <div className='edit-action'><div className='button' onClick={props.handleAddCardClick}>Add</div>&nbsp;&nbsp;{props.decks[props.selectedDeck].cards.length !== 0 ? <div className='button' onClick={props.handleEditCardClick}>Edit</div> : ''}</div>
             </CardActions>
          </Card>
          <div className='card-actions'>

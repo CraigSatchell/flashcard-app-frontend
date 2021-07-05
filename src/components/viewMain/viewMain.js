@@ -20,23 +20,24 @@ const ViewMain = (props) => {
                />
             </Grid>
             <Grid item md={7}>
-               <ViewCard decks={props.decks}
-                  handleEditCardClick={props.handleEditCardClick}
-                  handleAddCardClick={props.handleAddCardClick}
-                  handleDeleteClick={props.handleDeleteCardClick}
-                  handlePrevCardClick={props.handlePrevCardClick}
-                  handleNextCardClick={props.handleNextCardClick}
-                  handleFlipCardClick={props.handleFlipCardClick}
-                  handleSaveCardClick={props.handleSaveCardClick}
-                  handleCardChange={props.handleCardChange}
-                  cardCount={props.cardCount}
-                  setCardCount={props.setCardCount}
-                  currCardCount={props.currCardCount}
-                  setCurrCardCount={props.setCurrCardCount}
-                  selectedCard={props.selectedCard}
-                  selectedDeck={props.selectedDeck}
-                  setSelectedCard={props.setSelectedCard} />
-            </Grid>
+               {props.selectedCard != null ?
+                  <ViewCard decks={props.decks}
+                     handleEditCardClick={props.handleEditCardClick}
+                     handleAddCardClick={props.handleAddCardClick}
+                     handleDeleteClick={props.handleDeleteCardClick}
+                     handlePrevCardClick={props.handlePrevCardClick}
+                     handleNextCardClick={props.handleNextCardClick}
+                     handleFlipCardClick={props.handleFlipCardClick}
+                     handleSaveCardClick={props.handleSaveCardClick}
+                     handleCardChange={props.handleCardChange}
+                     cardCount={props.cardCount}
+                     setCardCount={props.setCardCount}
+                     currCardCount={props.currCardCount}
+                     setCurrCardCount={props.setCurrCardCount}
+                     selectedCard={props.selectedCard}
+                     selectedDeck={props.selectedDeck}
+                     setSelectedCard={props.setSelectedCard} /> : <p>No Cards</p>}
+            </Grid> 
          </Grid>
       </div>
    )

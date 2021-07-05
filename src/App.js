@@ -15,7 +15,7 @@ const App = () => {
    ******************************/
 
    // State variables
-   const [decks, setDecks] = useState();
+   const [decks, setDecks] = useState([]);
    const [cardCount, setCardCount] = useState(0);
    const [currCardCount, setCurrCardCount] = useState(0);
    const [selectedCard, setSelectedCard] = useState(0);
@@ -43,7 +43,7 @@ const App = () => {
    }, []);
 
    useEffect(() => {
-      if (decks) {
+      if (decks.length > 0) {
          setSelectedDeck(selectedDeck);
          setCardCount(decks[selectedDeck].cards.length);
          }
@@ -161,7 +161,7 @@ const App = () => {
          <Container maxWidth='lg'>
             <div id="contents">
                <Grid container spacing={2} justify='space-around' alignItems='center'>
-                  {decks ? <ViewMain decks={decks}
+                  {decks.length > 0 ? <ViewMain decks={decks}
                      handleEditCardClick={handleEditCardClick}
                      handleAddCardClick={handleAddCardClick}
                      handleDeleteClick={handleDeleteCardClick}
