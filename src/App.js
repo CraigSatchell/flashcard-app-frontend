@@ -20,6 +20,7 @@ const App = () => {
    const [currCardCount, setCurrCardCount] = useState(0);
    const [selectedCard, setSelectedCard] = useState(0);
    const [selectedDeck, setSelectedDeck] = useState(0);
+   const [showCardBack, setShowCardBack] = useState(false);
 
 
 
@@ -46,8 +47,8 @@ const App = () => {
       if (decks.length > 0) {
          setSelectedDeck(selectedDeck);
          setCardCount(decks[selectedDeck].cards.length);
-         }
-   },[selectedDeck, decks])
+      }
+   }, [selectedDeck, decks])
 
    /*
    // get card decks by id
@@ -105,14 +106,14 @@ const App = () => {
    }
 
    const handleNextCardClick = () => {
-      if (selectedCard < cardCount-1) {
+      if (selectedCard < cardCount - 1) {
          setSelectedCard(selectedCard + 1);
       }
 
    }
 
    const handleFlipCardClick = () => {
-      alert('card flip');
+      !showCardBack ? setShowCardBack(true) : setShowCardBack(false);
    }
 
    const handleSaveCardClick = (event) => {
@@ -183,6 +184,8 @@ const App = () => {
                      setSelectedCard={setSelectedCard}
                      selectedDeck={selectedDeck}
                      setSelectedDeck={setSelectedDeck}
+                     showCardBack={showCardBack}
+                     setShowCardBack={setShowCardBack}
                   /> : <p>Loading...</p>}
                </Grid>
             </div>

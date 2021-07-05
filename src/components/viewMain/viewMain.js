@@ -36,7 +36,9 @@ const ViewMain = (props) => {
                      setCurrCardCount={props.setCurrCardCount}
                      selectedCard={props.selectedCard}
                      selectedDeck={props.selectedDeck}
-                     setSelectedCard={props.setSelectedCard} /> : <p>No Cards</p>}
+                     setSelectedCard={props.setSelectedCard}
+                     showCardBack={props.showCardBack}
+                     setShowCardBack={props.setShowCardBack}/> : <p>No Cards</p>}
             </Grid> 
          </Grid>
       </div>

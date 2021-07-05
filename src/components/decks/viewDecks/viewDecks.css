@@ -22,6 +22,7 @@
     list-style: none;
 }
 
+
 .view-decks ul li:hover, .view-decks ul li a:hover {
    border-bottom: 2px dashed #999999;
    border-right: 2px dashed #999999;
@@ -36,4 +37,9 @@
    border-radius: 5px;
    padding: 1px 10px;
    background-color: inherit;
+}
+
+.view-decks .active-deck {
+   color: var(--sec-color);
+   font-weight: bold;
 }
