@@ -129,8 +129,8 @@ const App = () => {
    ******************************/
 
    console.log(decks);
-   console.log(selectedDeck);
-   console.log('count:', currCardCount, cardCount);
+   // console.log(selectedDeck);
+   // console.log('count:', currCardCount, cardCount);
 
    return (
       <div id="wrapper">

@@ -2,6 +2,7 @@
     margin-bottom: 50px;
     padding: 5px 25px;
     color: var(--pri-text-color);
+    width: 500px;
 }
 
 .view-card h2 {
@@ -15,8 +16,7 @@
 }
 
 .view-card h4 {
-   font-size: 1.8em;
-   width: 500px;
+   font-size: 1.7em;
 }
 
 .view-card .card-actions {
@@ -37,6 +37,7 @@ text-align: center;
 .view-card .card-actions ul li:hover,
 .card-actions li a:hover {
     color: var(--sec-color);
+    cursor: grab;
 }
 
 .view-card .edit-action {
@@ -69,4 +70,5 @@ text-align: center;
     color: var(--pri-color);
     font-weight: bold;
     text-decoration: none;
+    cursor: grab;
 }

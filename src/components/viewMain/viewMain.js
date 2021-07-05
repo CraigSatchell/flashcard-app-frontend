@@ -7,8 +7,8 @@ import { Grid } from '@material-ui/core';
 const ViewMain = (props) => {
    return (
       <div className='view-main'>
-         <Grid container spacing={2} justify='space-around'>
-            <Grid item xs={5}>
+         <Grid container spacing={10} justify='space-around'>
+            <Grid item md={5}>
                <ViewDecks decks={props.decks}
                   handleAddDeckClick={props.handleAddDeckClick}
                   handleEditDeckClick={props.handleEditDeckClick}

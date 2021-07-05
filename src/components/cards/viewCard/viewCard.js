@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
    card: {
       padding: theme.spacing(0),
       margin: 0,
-      width: '100%',
       color: 'var(--pri-text-color)',
       backgroundColor: '#999999',
    },
@@ -32,24 +31,24 @@ const ViewCard = (props) => {
          <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
                <Typography gutterBottom variant="h5" component="h2">
-                  FlashCard - {props.decks[0].title}
+                  FlashCard - {props.decks[props.selectedDeck].title}
                </Typography>
                <Typography variant="h4" >
-
+                  {props.decks[props.selectedDeck].cards[props.selectedCard].cardFront}
                </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
                <div className='card-count'>{props.currCardCount + 1} of {props.cardCount}</div>
-               <div className='edit-action'><a className='button' href='./'>Add</a>&nbsp;&nbsp;<a className='button' href='./'>Edit</a></div>
+               <div className='edit-action'><div className='button' onClick={props.handleAddCardClick}>Add</div>&nbsp;&nbsp;<div className='button' onClick={props.handleEditCardClick}>Edit</div></div>
             </CardActions>
          </Card>
          <div className='card-actions'>
             <ul>
-               <li>Prev</li>
+               <li onClick={props.handlePrevCardClick}>Prev</li>
                <li> | </li>
-               <li>Flip</li>
+               <li onClick={props.handleFlipCardClick}>Flip</li>
                <li> | </li>
-               <li>Next</li>
+               <li onClick={props.handleNextCardClick}>Next</li>
             </ul>
          </div>
       </div>
