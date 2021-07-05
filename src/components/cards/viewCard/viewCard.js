@@ -4,22 +4,24 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
 
+
 const useStyles = makeStyles((theme) => ({
    card: {
       padding: theme.spacing(0),
       margin: 0,
+      width: '100%',
       color: 'var(--pri-text-color)',
       backgroundColor: '#999999',
    },
    cardContent: {
       minHeight: '300px',
+
    },
    cardActions: {
       display: 'flex',
-      float: 'right',
       marginBottom: theme.spacing(2),
       marginRight: theme.spacing(2),
-
+      justifyContent: 'space-between',
    }
 }));
 
@@ -33,11 +35,12 @@ const ViewCard = (props) => {
                   FlashCard - {props.decks[0].title}
                </Typography>
                <Typography variant="h4" >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sapiente nobis facilis quae, dicta itaque praesentium minus reiciendis, corrupti .
+
                </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-            <div className='edit-action'><a className='button' href='./'>Add</a>&nbsp;&nbsp;<a className='button' href='./'>Edit</a></div>
+               <div className='card-count'>{props.currCardCount + 1} of {props.cardCount}</div>
+               <div className='edit-action'><a className='button' href='./'>Add</a>&nbsp;&nbsp;<a className='button' href='./'>Edit</a></div>
             </CardActions>
          </Card>
          <div className='card-actions'>

@@ -8,7 +8,7 @@ const ViewMain = (props) => {
    return (
       <div className='view-main'>
          <Grid container spacing={2} justify='space-around'>
-            <Grid xs={5}>
+            <Grid item xs={5}>
                <ViewDecks decks={props.decks}
                   handleAddDeckClick={props.handleAddDeckClick}
                   handleEditDeckClick={props.handleEditDeckClick}
@@ -18,7 +18,7 @@ const ViewMain = (props) => {
                   setSelectedDeck={props.setSelectedDeck}
                />
             </Grid>
-            <Grid md={7}>
+            <Grid item md={7}>
                <ViewCard decks={props.decks}
                   handleEditCardClick={props.handleEditCardClick}
                   handleAddCardClick={props.handleAddCardClick}
@@ -30,9 +30,10 @@ const ViewMain = (props) => {
                   handleCardChange={props.handleCardChange}
                   cardCount={props.cardCount}
                   setCardCount={props.setCardCount}
-                  currCardCardCount={props.currCardCount}
+                  currCardCount={props.currCardCount}
                   setCurrCardCount={props.setCurrCardCount}
                   selectedCard={props.selectedCard}
+                  selectedDeck={props.selectedDeck}
                   setSelectedCard={props.setSelectedCard} />
             </Grid>
          </Grid>

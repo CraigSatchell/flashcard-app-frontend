@@ -16,13 +16,16 @@
 
 .view-card h4 {
    font-size: 1.8em;
+   width: 500px;
 }
 
 .view-card .card-actions {
     margin-top: 5px;
     font-size: 1.5em;
-    text-align: center;
+text-align: center;
 }
+
+
 .view-card .card-actions ul li,
 .card-actions li a {
     display: inline;
@@ -39,6 +42,13 @@
 .view-card .edit-action {
     display: flex;
     justify-content: flex-end;
+}
+
+.card-count {
+   padding-left: 20px;
+   color: var(--sec-color);
+   font-weight: bold;
+   font-size: 1.5em;
 }
 
 .edit-action .button,

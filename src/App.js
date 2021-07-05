@@ -15,27 +15,28 @@ const App = () => {
    ******************************/
 
    // State variables
-   const [decks, setDecks] = useState(null);
+   const [decks, setDecks] = useState();
    const [cardCount, setCardCount] = useState(0);
    const [currCardCount, setCurrCardCount] = useState(0);
-   const [selectedCard, setSelectedCard] = useState(null);
-   const [selectedDeck, setSelectedDeck] = useState(null);
+   const [selectedCard, setSelectedCard] = useState(0);
+   const [selectedDeck, setSelectedDeck] = useState(0);
+
+   
+   
+   /******************************
+    *  API routes
+    ******************************/
+   const apiPath = 'http://localhost:5000/api/carddecks';
+   
+   
+   const getAllCardDecks = () => {
+      axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
+   }
 
    // Use effect
    useEffect(() => {
       getAllCardDecks();
-   }
-      , []);
-
-
-   /******************************
-    *  API routes
-   ******************************/
-   const apiPath = 'http://localhost:5000/api/carddecks';
-
-   const getAllCardDecks = () => {
-      axios.get(apiPath).then((res) => { setDecks(res.data) }).catch((err) => console.log(err));
-   }
+   }, []);
 
    /*
    // get card decks by id
@@ -128,6 +129,8 @@ const App = () => {
    ******************************/
 
    console.log(decks);
+   console.log(selectedDeck);
+   console.log('count:', currCardCount, cardCount);
 
    return (
       <div id="wrapper">
@@ -135,28 +138,28 @@ const App = () => {
          <Container maxWidth='lg'>
             <div id="contents">
                <Grid container spacing={2} justify='space-around' alignItems='center'>
-                  {decks == null ? <p>Loading...</p> : <ViewMain decks={decks}
-                     handleEditCardClick={handleEditCardClick}
-                     handleAddCardClick={handleAddCardClick}
-                     handleDeleteClick={handleDeleteCardClick}
-                     handlePrevCardClick={handlePrevCardClick}
-                     handleNextCardClick={handleNextCardClick}
-                     handleFlipCardClick={handleFlipCardClick}
-                     handleSaveCardClick={handleSaveCardClick}
-                     handleAddDeckClick={handleAddDeckClick}
-                     handleEditDeckClick={handleEditDeckClick}
-                     handleSaveDeckClick={handleSaveDeckClick}
-                     handleDeckChange={handleDeckChange}
-                     handleCardChange={handleCardChange}
-                     cardCount={cardCount}
-                     setCardCount={setCardCount}
-                     currCardCardCount={currCardCount}
-                     setCurrCardCount={setCurrCardCount}
-                     selectedCard={selectedCard}
-                     setSelectedCard={setSelectedCard}
-                     selectedDeck={selectedDeck}
-                     setSelectedDeck={setSelectedDeck}
-                  />}
+                  {decks ? <ViewMain decks={decks}
+                  handleEditCardClick={handleEditCardClick}
+                  handleAddCardClick={handleAddCardClick}
+                  handleDeleteClick={handleDeleteCardClick}
+                  handlePrevCardClick={handlePrevCardClick}
+                  handleNextCardClick={handleNextCardClick}
+                  handleFlipCardClick={handleFlipCardClick}
+                  handleSaveCardClick={handleSaveCardClick}
+                  handleAddDeckClick={handleAddDeckClick}
+                  handleEditDeckClick={handleEditDeckClick}
+                  handleSaveDeckClick={handleSaveDeckClick}
+                  handleDeckChange={handleDeckChange}
+                  handleCardChange={handleCardChange}
+                  cardCount={cardCount}
+                  setCardCount={setCardCount}
+                  currCardCount={currCardCount}
+                  setCurrCardCount={setCurrCardCount}
+                  selectedCard={selectedCard}
+                  setSelectedCard={setSelectedCard}
+                  selectedDeck={selectedDeck}
+                  setSelectedDeck={setSelectedDeck}
+                  /> : <p>Loading...</p>}
                </Grid>
             </div>
          </Container>
