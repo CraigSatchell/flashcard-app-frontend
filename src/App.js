@@ -21,6 +21,8 @@ const App = () => {
    const [selectedCard, setSelectedCard] = useState(0);
    const [selectedDeck, setSelectedDeck] = useState(0);
    const [showCardBack, setShowCardBack] = useState(false);
+   const [cardAction, setCardAction] = useState('view');
+   const [newCard, setNewCard] = useState({cardFront: '', cardBack: ''})
 
 
 
@@ -92,7 +94,7 @@ const App = () => {
    }
 
    const handleAddCardClick = () => {
-      alert('card add');
+      setCardAction('add');
    }
 
    const handleDeleteCardClick = () => {
@@ -137,7 +139,7 @@ const App = () => {
 
    }
 
-   const handleDeckChange = () => {
+   const handleDeckChange = (event) => {
 
    }
 
@@ -186,6 +188,10 @@ const App = () => {
                      setSelectedDeck={setSelectedDeck}
                      showCardBack={showCardBack}
                      setShowCardBack={setShowCardBack}
+                     cardAction={cardAction}
+                     setCardAction={setCardAction}
+                     newCard={newCard}
+                     setNewCard={setNewCard}
                   /> : <p>Loading...</p>}
                </Grid>
             </div>

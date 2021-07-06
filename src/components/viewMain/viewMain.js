@@ -1,6 +1,7 @@
 import React from 'react';
 import ViewDecks from '../decks/viewDecks/viewDecks';
 import ViewCard from '../cards/viewCard/viewCard';
+import CreateCard from '../cards/createCard/createCard';
 import './viewMain.css';
 import { Grid } from '@material-ui/core';
 
@@ -20,7 +21,7 @@ const ViewMain = (props) => {
                />
             </Grid>
             <Grid item md={7}>
-               {props.selectedCard != null ?
+               {props.cardAction === 'view' && props.selectedCard != null ?
                   <ViewCard decks={props.decks}
                      handleEditCardClick={props.handleEditCardClick}
                      handleAddCardClick={props.handleAddCardClick}
@@ -38,7 +39,14 @@ const ViewMain = (props) => {
                      selectedDeck={props.selectedDeck}
                      setSelectedCard={props.setSelectedCard}
                      showCardBack={props.showCardBack}
-                     setShowCardBack={props.setShowCardBack}/> : <p>No Cards</p>}
+                     setShowCardBack={props.setShowCardBack} /> : ''}
+               
+               {props.cardAction === 'add' ? <CreateCard decks={props.decks}
+                  selectedDeck={props.selectedDeck}
+                  handleCardChange={props.handleCardChange}
+                  handleSaveCardClick={props.handleSaveCardClick}
+                  newCard={props.newCard}
+                  setNewCard={props.setNewCard}/> : ''}
             </Grid> 
          </Grid>
       </div>

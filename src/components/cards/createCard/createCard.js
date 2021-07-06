@@ -31,10 +31,10 @@ const CreateCard = (props) => {
                   <div>FlashCard - {props.decks[props.selectedDeck].title}</div>
                </Typography>
                <Typography variant="h4" >
-                  <form action="">
-                     <input type="text" name="term" value='' placeholder='Term' />
-                     <input type="text" name="definition" value='' placeholder='Definition' />
-                     <input type="submit" name='save' value='Save' />
+                  <form onSubmit={(event) => { props.handleSaveCard(event) }}>
+                     <input type="text" name="term" onChange={(event) => props.setNewCard({cardFront: event.target.value}) } placeholder='Term' /><br />
+                     <input type="text" name="definition" onChange={(event) => props.setNewCard({cardBack: event.target.value}) } value={props.newCard.cardBack} placeholder='Definition' /><br />
+                     <div className='button-save'><input type="submit" name='save' value='Save' /></div>
                   </form>
                </Typography>
             </CardContent>
