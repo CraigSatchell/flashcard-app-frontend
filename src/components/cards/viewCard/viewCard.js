@@ -22,7 +22,7 @@ const ViewCard = (props) => {
    const classes = useStyles();
    return (
       <div className='view-card'>
-         <Card className='card'>
+         <Card id='flashcard'>
             <CardContent className={classes.cardContent}>
                <Typography gutterBottom variant="h5" component="h2">
                   <div>FlashCard - {props.decks[props.selectedDeck].title}</div>

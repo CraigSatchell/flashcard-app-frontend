@@ -118,8 +118,14 @@ const App = () => {
    }
 
    const handleFlipCardClick = () => {
-      !showCardBack ? setShowCardBack(true) : setShowCardBack(false);
-      document.getElementById("p2").style.color = "blue";
+   
+      if (!showCardBack) {
+         setShowCardBack(true);
+         document.getElementById("flashcard").style.backgroundColor = '#333333';
+      } else {
+         setShowCardBack(false);
+         document.getElementById("flashcard").style.backgroundColor = '#999999';
+      }
    }
 
 

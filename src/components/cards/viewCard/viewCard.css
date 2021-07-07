@@ -6,11 +6,6 @@
 
 }
 
-.view-card .card {
-   color: var(--pri-text-color);
-   background-color: #999999;
-   transition: background-color ease-in 2s;
-}
 
 .view-card h2 {
     margin-bottom: 10px;
@@ -36,7 +31,7 @@
 }
 
 .view-card .card-actions {
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 1.5em;
     text-align: center;
 }
@@ -86,4 +81,11 @@
     font-weight: bold;
     text-decoration: none;
     cursor: grab;
+}
+
+
+#flashcard {
+   color: var(--pri-text-color);
+   background-color: #999999;
+   transition: background-color ease-in 1s;
 }
