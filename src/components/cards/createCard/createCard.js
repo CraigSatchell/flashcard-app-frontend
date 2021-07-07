@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-between',
    }
 }));
+
+
 const CreateCard = (props) => {
    const classes = useStyles();
    return (
@@ -31,9 +33,9 @@ const CreateCard = (props) => {
                   <div>FlashCard - {props.decks[props.selectedDeck].title}</div>
                </Typography>
                <Typography variant="h4" >
-                  <form onSubmit={(event) => { props.handleSaveCard(event) }}>
-                     <input type="text" name="term" onChange={(event) => props.setNewCard({cardFront: event.target.value}) } placeholder='Term' /><br />
-                     <input type="text" name="definition" onChange={(event) => props.setNewCard({cardBack: event.target.value}) } value={props.newCard.cardBack} placeholder='Definition' /><br />
+                  <form onSubmit={(event) => { props.handleSaveCardClick(event) }}>
+                     <input type="text" name="cardFront" onChange={props.handleCardChange} value={props.newCard.cardFront} placeholder='Term' /><br />
+                     <input type="text" name="cardBack" onChange={props.handleCardChange} value={props.newCard.cardBack} placeholder='Definition' /><br />
                      <div className='button-save'><input type="submit" name='save' value='Save' /></div>
                   </form>
                </Typography>

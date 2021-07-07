@@ -6,12 +6,6 @@ import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
-   card: {
-      padding: theme.spacing(0),
-      margin: 0,
-      color: 'var(--pri-text-color)',
-      backgroundColor: '#999999',
-   },
    cardContent: {
       minHeight: '300px',
 
@@ -28,15 +22,15 @@ const ViewCard = (props) => {
    const classes = useStyles();
    return (
       <div className='view-card'>
-         <Card className={classes.card}>
+         <Card className='card'>
             <CardContent className={classes.cardContent}>
                <Typography gutterBottom variant="h5" component="h2">
                   <div>FlashCard - {props.decks[props.selectedDeck].title}</div>
                </Typography>
                <Typography variant="h4" >
-                  {!props.showCardBack && props.decks[props.selectedDeck].cards.length !== 0 ? <div>{props.decks[props.selectedDeck].cards[props.selectedCard].cardFront}</div> : <div></div>}
+                  {!props.showCardBack && props.decks[props.selectedDeck].cards.length !== 0 ? <div className='card-front'>{props.decks[props.selectedDeck].cards[props.selectedCard].cardFront}</div> : <div></div>}
 
-                  {props.showCardBack && props.decks[props.selectedDeck].cards.length !== 0 ? <div>{props.decks[props.selectedDeck].cards[props.selectedCard].cardBack}</div> : <div></div>}
+                  {props.showCardBack && props.decks[props.selectedDeck].cards.length !== 0 ? <div className="card-back">{props.decks[props.selectedDeck].cards[props.selectedCard].cardBack}</div> : <div></div>}
                </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>

@@ -3,6 +3,13 @@
     padding: 5px 25px;
     color: var(--pri-text-color);
     width: 500px;
+
+}
+
+.view-card .card {
+   color: var(--pri-text-color);
+   background-color: #999999;
+   transition: background-color ease-in 2s;
 }
 
 .view-card h2 {
@@ -16,15 +23,23 @@
 }
 
 .view-card h4 {
-   font-size: 1.7em;
+    font-size: 1.7em;
+}
+
+.view-card .card-front, .view-card .card-back {
+    padding: 50px;
+
+}
+
+.view-card .card-front {
+   text-align: center;
 }
 
 .view-card .card-actions {
     margin-top: 5px;
     font-size: 1.5em;
-text-align: center;
+    text-align: center;
 }
-
 
 .view-card .card-actions ul li,
 .card-actions li a {
@@ -46,10 +61,10 @@ text-align: center;
 }
 
 .card-count {
-   padding-left: 20px;
-   color: var(--sec-color);
-   font-weight: bold;
-   font-size: 1.5em;
+    padding-left: 20px;
+    color: var(--sec-color);
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .edit-action .button,

@@ -30,7 +30,6 @@ const ViewMain = (props) => {
                      handleNextCardClick={props.handleNextCardClick}
                      handleFlipCardClick={props.handleFlipCardClick}
                      handleSaveCardClick={props.handleSaveCardClick}
-                     handleCardChange={props.handleCardChange}
                      cardCount={props.cardCount}
                      setCardCount={props.setCardCount}
                      currCardCount={props.currCardCount}
@@ -40,14 +39,17 @@ const ViewMain = (props) => {
                      setSelectedCard={props.setSelectedCard}
                      showCardBack={props.showCardBack}
                      setShowCardBack={props.setShowCardBack} /> : ''}
-               
+
                {props.cardAction === 'add' ? <CreateCard decks={props.decks}
                   selectedDeck={props.selectedDeck}
-                  handleCardChange={props.handleCardChange}
                   handleSaveCardClick={props.handleSaveCardClick}
+                  handleCardChange={props.handleCardChange}
                   newCard={props.newCard}
-                  setNewCard={props.setNewCard}/> : ''}
-            </Grid> 
+
+
+ /> : ''}
+
+            </Grid>
          </Grid>
       </div>
    )

@@ -22,7 +22,7 @@ const App = () => {
    const [selectedDeck, setSelectedDeck] = useState(0);
    const [showCardBack, setShowCardBack] = useState(false);
    const [cardAction, setCardAction] = useState('view');
-   const [newCard, setNewCard] = useState({cardFront: '', cardBack: ''})
+   const [newCard, setNewCard] = useState({ cardFront: '', cardBack: '' })
 
 
 
@@ -36,9 +36,17 @@ const App = () => {
       axios.get(apiPath).then((res) => { setDecks(res.data); }).catch((err) => console.log(err));
    }
 
-   // const getAllCardDecks = () => {
-   //    axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
-   // }
+   // Add flashcard to deck
+   const addFlashCard2Deck = (deckId, data) => {
+      return axios.post(`${apiPath}/${deckId}/cards`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
+
+
+   // Update flashcard
+   const updateFlashCard = (deckId, cardId, data) => {
+      return axios.put(`${apiPath}/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
+
 
    // Use effect
    useEffect(() => {
@@ -52,40 +60,35 @@ const App = () => {
       }
    }, [selectedDeck, decks])
 
-   /*
-   // get card decks by id
-   const getCardDeckById = (deckId) => {
-      return axios.get(`${apiPath}/${deckId}`).then((res) => (res.data)).catch((err) => console.log(err));
-   }
 
-   // add new card deck
-   const addCardDeck = (data) => {
-      return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   }
+   // // const getAllCardDecks = () => {
+   // //    axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
+   // // }
 
+   // // get card decks by id
+   // const getCardDeckById = (deckId) => {
+   //    return axios.get(`${apiPath}/${deckId}`).then((res) => (res.data)).catch((err) => console.log(err));
+   // }
 
-   // Get flashcard collection by cardDeck id
-   const getFlashCardArray = (deckId) => {
-      return axios.get(`${apiPath}/${deckId}/cards`).then((res) => (res.data)).catch((err) => console.log(err));
-   }
+   // // add new card deck
+   // const addCardDeck = (data) => {
+   //    return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   // }
 
 
-   // Get flashcard collection by cardDeck & flashCard id
-   const getFlashCardById = (deckId, cardId) => {
-      return axios.get(`${apiPath}/${deckId}/cards/${cardId}`).then((res) => (res.data)).catch((err) => console.log(err));
-   }
+   // // Get flashcard collection by cardDeck id
+   // const getFlashCardArray = (deckId) => {
+   //    return axios.get(`${apiPath}/${deckId}/cards`).then((res) => (res.data)).catch((err) => console.log(err));
+   // }
 
 
-   // Add flashcard to deck
-   const addFlashCard2Deck = (deckId, data) => {
-      return axios.post(`${apiPath}/${deckId}/cards`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   }
+   // // Get flashcard collection by cardDeck & flashCard id
+   // const getFlashCardById = (deckId, cardId) => {
+   //    return axios.get(`${apiPath}/${deckId}/cards/${cardId}`).then((res) => (res.data)).catch((err) => console.log(err));
+   // }
 
-   // Update flashcard
-   const updateFlashCard = (deckId, cardId, data) => {
-      return axios.put(`${apiPath}/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   }
-*/
+
+
    /******************************
     *  Event handlers
    ******************************/
@@ -116,15 +119,33 @@ const App = () => {
 
    const handleFlipCardClick = () => {
       !showCardBack ? setShowCardBack(true) : setShowCardBack(false);
+      document.getElementById("p2").style.color = "blue";
    }
 
+
    const handleSaveCardClick = (event) => {
-      event.preventDefault();
+      //event.preventDefault();
+      try {
+         addFlashCard2Deck(decks[selectedDeck]._id, newCard);
+         console.log(decks[selectedDeck])
+         console.log(newCard);
+         alert('save card');
+      } catch (error) {
+         console.log(error);
+      } finally {
+
+      }
+   }
+
+   const handleCardChange = (event) => {
+      event.persist();
+      setNewCard(prevNewCard => ({ ...prevNewCard, [event.target.name]: event.target.value }));
    }
 
    const handleAddDeckClick = () => {
       alert('deck add')
    }
+
 
    const handleEditDeckClick = (id) => {
       alert('deck edit: ' + id)
@@ -135,9 +156,6 @@ const App = () => {
 
    }
 
-   const handleCardChange = () => {
-
-   }
 
    const handleDeckChange = (event) => {
 
