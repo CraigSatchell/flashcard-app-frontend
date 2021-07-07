@@ -22,7 +22,9 @@ const App = () => {
    const [selectedDeck, setSelectedDeck] = useState(0);
    const [showCardBack, setShowCardBack] = useState(false);
    const [cardAction, setCardAction] = useState('view');
-   const [newCard, setNewCard] = useState({ cardFront: '', cardBack: '' })
+   const [newCard, setNewCard] = useState({ cardFront: '', cardBack: '' });
+   const [newDeck, setNewDeck] = useState({ title: '', description: '' });
+   const [showCreateDeck, setShowCreateDeck] = useState(false);
 
 
 
@@ -58,7 +60,7 @@ const App = () => {
          setSelectedDeck(selectedDeck);
          setCardCount(decks[selectedDeck].cards.length);
       }
-   }, [selectedDeck, decks])
+   }, [selectedDeck, decks]);
 
 
 
@@ -111,29 +113,25 @@ const App = () => {
 
    const handleSaveCardClick = (event) => {
       //event.preventDefault();
-      console.log(event.currentTarget.value)
-      alert('wait')
-      if (event.target.value === 'Save') {
-         try {
-            addFlashCard2Deck(decks[selectedDeck]._id, newCard);
-            console.log(decks[selectedDeck])
-            console.log(newCard);
-            alert('save card');
-         } catch (error) {
-            console.log(error);
-         } finally {
+      try {
+         addFlashCard2Deck(decks[selectedDeck]._id, newCard);
+         console.log(decks[selectedDeck])
+         console.log(newCard);
+         alert('save card');
+      } catch (error) {
+         console.log(error);
+      } finally {
 
-         }
       }
-
    }
+
 
    const handleCardChange = (event) => {
       event.persist();
       setNewCard(prevNewCard => ({ ...prevNewCard, [event.target.name]: event.target.value }));
    }
 
-   const handleAddDeckClick = () => {
+   const handleCreateDeckClick = () => {
       alert('deck add')
    }
 
@@ -149,7 +147,8 @@ const App = () => {
 
 
    const handleDeckChange = (event) => {
-
+      event.persist();
+      setNewDeck(prevNewDeck => ({ ...prevNewDeck, [event.target.name]: event.target.value }));
    }
 
    const handleSwitchDecks = (index) => {
@@ -181,7 +180,7 @@ const App = () => {
                      handleNextCardClick={handleNextCardClick}
                      handleFlipCardClick={handleFlipCardClick}
                      handleSaveCardClick={handleSaveCardClick}
-                     handleAddDeckClick={handleAddDeckClick}
+                     handleCreateDeckClick={handleCreateDeckClick}
                      handleEditDeckClick={handleEditDeckClick}
                      handleSaveDeckClick={handleSaveDeckClick}
                      handleDeckChange={handleDeckChange}
@@ -201,6 +200,9 @@ const App = () => {
                      setCardAction={setCardAction}
                      newCard={newCard}
                      setNewCard={setNewCard}
+                     newDeck={newDeck}
+                     showCreateDeck={showCreateDeck}
+                     setShowCreateDeck={setShowCreateDeck}
                   /> : <p>Loading...</p>}
                </Grid>
             </div>

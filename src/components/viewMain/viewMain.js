@@ -11,13 +11,16 @@ const ViewMain = (props) => {
          <Grid container spacing={10} justify='space-around'>
             <Grid item md={5}>
                <ViewDecks decks={props.decks}
-                  handleAddDeckClick={props.handleAddDeckClick}
+                  handleCreateDeckClick={props.handleCreateDeckClick}
                   handleEditDeckClick={props.handleEditDeckClick}
                   handleSaveDeckClick={props.handleSaveDeckClick}
                   handleDeckChange={props.handleDeckChange}
                   handleSwitchDecks={props.handleSwitchDecks}
                   selectedDeck={props.selectedDeck}
                   setSelectedDeck={props.setSelectedDeck}
+                  newDeck={props.newDeck}
+                  showCreateDeck={props.showCreateDeck}
+                  setShowCreateDeck={props.setShowCreateDeck}
                />
             </Grid>
             <Grid item md={7}>

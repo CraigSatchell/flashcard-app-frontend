@@ -1,10 +1,17 @@
 import React from 'react';
 import './createDeck.css';
 
-const CreateDeck = () => {
+const CreateDeck = (props) => {
    return (
       <div className='create-deck'>
-         <h3>Create Deck</h3>
+         <form onSubmit={(event) => { props.handleSaveDeckClick(event) }}>
+            <input type="text" name="title" onChange={props.handleDeckChange} value={props.newDeck.title} placeholder='Title' /><br />
+            <input type="text" name="description" onChange={props.handleDeckChange} value={props.newCard.cardBack} placeholder='Description' /><br />
+            <div className='button-save'>
+               <div><input type="submit" name='save' value='Save' /></div>
+            </div>
+         </form>
+
       </div>
    )
 }
