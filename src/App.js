@@ -61,30 +61,10 @@ const App = () => {
    }, [selectedDeck, decks])
 
 
-   // // const getAllCardDecks = () => {
-   // //    axios.get(apiPath).then((res) => { setDecks(res.data); setSelectedDeck(0); setCardCount(res.data[0].cards.length); setSelectedCard(res.data[0].cards[0] ? 0 : null) }).catch((err) => console.log(err));
-   // // }
-
-   // // get card decks by id
-   // const getCardDeckById = (deckId) => {
-   //    return axios.get(`${apiPath}/${deckId}`).then((res) => (res.data)).catch((err) => console.log(err));
-   // }
 
    // // add new card deck
    // const addCardDeck = (data) => {
    //    return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   // }
-
-
-   // // Get flashcard collection by cardDeck id
-   // const getFlashCardArray = (deckId) => {
-   //    return axios.get(`${apiPath}/${deckId}/cards`).then((res) => (res.data)).catch((err) => console.log(err));
-   // }
-
-
-   // // Get flashcard collection by cardDeck & flashCard id
-   // const getFlashCardById = (deckId, cardId) => {
-   //    return axios.get(`${apiPath}/${deckId}/cards/${cardId}`).then((res) => (res.data)).catch((err) => console.log(err));
    // }
 
 
@@ -118,7 +98,7 @@ const App = () => {
    }
 
    const handleFlipCardClick = () => {
-   
+
       if (!showCardBack) {
          setShowCardBack(true);
          document.getElementById("flashcard").style.backgroundColor = '#333333';
@@ -131,16 +111,21 @@ const App = () => {
 
    const handleSaveCardClick = (event) => {
       //event.preventDefault();
-      try {
-         addFlashCard2Deck(decks[selectedDeck]._id, newCard);
-         console.log(decks[selectedDeck])
-         console.log(newCard);
-         alert('save card');
-      } catch (error) {
-         console.log(error);
-      } finally {
+      console.log(event.currentTarget.value)
+      alert('wait')
+      if (event.target.value === 'Save') {
+         try {
+            addFlashCard2Deck(decks[selectedDeck]._id, newCard);
+            console.log(decks[selectedDeck])
+            console.log(newCard);
+            alert('save card');
+         } catch (error) {
+            console.log(error);
+         } finally {
 
+         }
       }
+
    }
 
    const handleCardChange = (event) => {

@@ -36,7 +36,9 @@ const CreateCard = (props) => {
                   <form onSubmit={(event) => { props.handleSaveCardClick(event) }}>
                      <input type="text" name="cardFront" onChange={props.handleCardChange} value={props.newCard.cardFront} placeholder='Term' /><br />
                      <input type="text" name="cardBack" onChange={props.handleCardChange} value={props.newCard.cardBack} placeholder='Definition' /><br />
-                     <div className='button-save'><input type="submit" name='save' value='Save' /></div>
+                     <div className='button-save'>
+                        <div><input type="submit" name='save' value='Save' /></div>
+                     </div>
                   </form>
                </Typography>
             </CardContent>
