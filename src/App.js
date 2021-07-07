@@ -50,6 +50,12 @@ const App = () => {
    }
 
 
+   // add new card deck
+   const addCardDeck = (data) => {
+      return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   }
+
+
    // Use effect
    useEffect(() => {
       getAllCardDecks();
@@ -63,11 +69,6 @@ const App = () => {
    }, [selectedDeck, decks]);
 
 
-
-   // // add new card deck
-   // const addCardDeck = (data) => {
-   //    return axios.post(`${apiPath}`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   // }
 
 
 
@@ -100,7 +101,6 @@ const App = () => {
    }
 
    const handleFlipCardClick = () => {
-
       if (!showCardBack) {
          setShowCardBack(true);
          document.getElementById("flashcard").style.backgroundColor = '#333333';
@@ -126,23 +126,33 @@ const App = () => {
    }
 
 
+   const handleSaveDeckClick = (event) => {
+      alert('deck add')
+      event.preventDefault();
+      console.log('newDeck:', newDeck);
+      // try {
+      //    addCardDeck(newDeck);
+      // } catch (error) {
+      //    console.log(error);
+      // } finally {
+
+      // }
+      setShowCreateDeck(false); // hide CreateDeck component
+   }
+
+
    const handleCardChange = (event) => {
       event.persist();
       setNewCard(prevNewCard => ({ ...prevNewCard, [event.target.name]: event.target.value }));
    }
 
-   const handleCreateDeckClick = () => {
-      alert('deck add')
+   const handleCreateDeckClick = (event) => {
+      setShowCreateDeck(true); //show CreateDeck component
    }
 
 
    const handleEditDeckClick = (id) => {
       alert('deck edit: ' + id)
-   }
-
-
-   const handleSaveDeckClick = () => {
-
    }
 
 
