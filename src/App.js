@@ -158,6 +158,7 @@ const App = () => {
    }
 
    const handleSwitchDecks = (index) => {
+      setCardAction('view');    // show ViewCard componeent, if not visible
       setShowCreateDeck(false);  // hide CreateDeck component, if visible
       setSelectedDeck(index);
       setCardCount(decks[index].cards.length);
