@@ -133,11 +133,9 @@ const App = () => {
 
 
    const handleSaveDeckClick = (event) => {
-      event.preventDefault();
-      console.log('newDeck:', newDeck);
-      alert('deck add');
       try {
          addCardDeck(newDeck);
+         setDecks([...decks, newDeck]);
       } catch (error) {
          console.log(error);
       }
