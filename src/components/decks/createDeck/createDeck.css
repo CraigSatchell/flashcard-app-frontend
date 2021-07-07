@@ -1,0 +1,27 @@
+.create-deck {
+margin-top: 25px;
+}
+
+.create-deck input {
+   width: 100%;
+   font-size: 1.2em;
+   border-radius: 3px;
+   color: var(--sec-color);
+   margin-bottom: 10px;
+   background-color: inherit;
+   padding: 5px 10px;
+   border: 1px solid #999999;
+}
+
+.create-deck input[type='submit'] {
+   border: 2px solid var(--sec-color);
+}
+
+.create-deck input[type='submit'] {
+   border: 2px solid var(--sec-color);
+}
+
+.create-deck input[type='submit']:hover {
+   font-weight: bold;
+   background-color: var(--pri-color);
+}

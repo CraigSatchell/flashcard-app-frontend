@@ -22,8 +22,8 @@ const App = () => {
    const [selectedDeck, setSelectedDeck] = useState(0);
    const [showCardBack, setShowCardBack] = useState(false);
    const [cardAction, setCardAction] = useState('view');
-   const [newCard, setNewCard] = useState({ cardFront: '', cardBack: '' });
-   const [newDeck, setNewDeck] = useState({ title: '', description: '' });
+   const [newCard, setNewCard] = useState({ cardFront: '', cardBack: ''});
+   const [newDeck, setNewDeck] = useState({ title: '', description: '', cards: [] });
    const [showCreateDeck, setShowCreateDeck] = useState(false);
 
 
@@ -114,29 +114,25 @@ const App = () => {
    const handleSaveCardClick = (event) => {
       //event.preventDefault();
       try {
+         console.log(newCard);
+         alert('add card');
          addFlashCard2Deck(decks[selectedDeck]._id, newCard);
          console.log(decks[selectedDeck])
-         console.log(newCard);
-         alert('save card');
       } catch (error) {
          console.log(error);
-      } finally {
-
-      }
+      } 
    }
 
 
    const handleSaveDeckClick = (event) => {
-      alert('deck add')
       event.preventDefault();
       console.log('newDeck:', newDeck);
-      // try {
-      //    addCardDeck(newDeck);
-      // } catch (error) {
-      //    console.log(error);
-      // } finally {
-
-      // }
+      alert('deck add');
+      try {
+         addCardDeck(newDeck);
+      } catch (error) {
+         console.log(error);
+      }
       setShowCreateDeck(false); // hide CreateDeck component
    }
 
@@ -162,19 +158,11 @@ const App = () => {
    }
 
    const handleSwitchDecks = (index) => {
+      setShowCreateDeck(false);  // hide CreateDeck component, if visible
       setSelectedDeck(index);
       setCardCount(decks[index].cards.length);
       setSelectedCard(0);
    }
-
-
-   /******************************
-    *  State modifiers
-   ******************************/
-
-   console.log(decks);
-   // console.log(selectedDeck);
-   // console.log('count:', currCardCount, cardCount);
 
    return (
       <div id="wrapper">

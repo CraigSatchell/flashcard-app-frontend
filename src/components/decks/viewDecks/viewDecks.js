@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateDeck from '../createDeck/createDeck';
 import './viewDecks.css';
 
 const ViewDecks = (props) => {
@@ -18,9 +19,12 @@ const ViewDecks = (props) => {
          <ul>
             {deckList}
          </ul>
-         <div>
-            <button>Create New Deck</button>
-         </div>
+         {props.showCreateDeck ? '' :
+            <div>
+               <button onClick={props.handleCreateDeckClick}>Create New Deck</button>
+            </div>}
+         
+         {props.showCreateDeck ? <CreateDeck decks={props.decks} newDeck={props.newDeck} handleDeckChange={props.handleDeckChange} handleSaveDeckClick={props.handleSaveDeckClick} /> : ''}
       </div>
    )
 }
