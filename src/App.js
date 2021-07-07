@@ -90,12 +90,20 @@ const App = () => {
    const handlePrevCardClick = () => {
       if (selectedCard > 0) {
          setSelectedCard(selectedCard - 1);
+         setShowCardBack(false);
+         document.getElementById("flashcard").style.backgroundColor = '#999999';
+      } else {
+         setSelectedCard(cardCount - 1);
       }
    }
 
    const handleNextCardClick = () => {
       if (selectedCard < cardCount - 1) {
          setSelectedCard(selectedCard + 1);
+         setShowCardBack(false);
+         document.getElementById("flashcard").style.backgroundColor = '#999999';
+      } else {
+         setSelectedCard(0);
       }
 
    }

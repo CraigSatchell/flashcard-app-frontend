@@ -36,7 +36,7 @@ const ViewCard = (props) => {
             <CardActions className={classes.cardActions}>
                {props.decks[props.selectedDeck].cards.length !== 0 ? <div className='card-count'>{props.selectedCard + 1} of {props.cardCount}</div> : ''}
                <div className='edit-action'><div className='button' onClick={props.handleAddCardClick}>Add</div>&nbsp;&nbsp;
-                  {props.decks[props.selectedDeck].cards.length !== 0 ? <div className='button' onClick={props.handleEditCardClick}>Edit</div> : ''}</div>
+                  {/*props.decks[props.selectedDeck].cards.length !== 0 ? <div className='button' onClick={props.handleEditCardClick}>Edit</div> : ''*/}</div>
             </CardActions>
          </Card>
 
