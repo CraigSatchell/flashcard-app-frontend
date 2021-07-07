@@ -44,10 +44,10 @@ const App = () => {
    }
 
 
-   // Update flashcard
-   const updateFlashCard = (deckId, cardId, data) => {
-      return axios.put(`${apiPath}/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err) => console.log(err));
-   }
+   // // Update flashcard
+   // const updateFlashCard = (deckId, cardId, data) => {
+   //    return axios.put(`${apiPath}/${deckId}/cards/${cardId}`, data).then((res) => (res.data)).catch((err) => console.log(err));
+   // }
 
 
    // add new card deck
